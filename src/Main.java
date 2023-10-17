@@ -27,6 +27,7 @@ class ArrayBub{
         System.out.println();
     }
 
+    // bubble sort
     public void bubbleSort(){
         int out, in;
         for(out=nElems-1;out>1;out--){
@@ -38,6 +39,7 @@ class ArrayBub{
         }
     }
 
+    //selection sort
     public void selectionSort(){
         int out, in, min;
         for (out = 0;out<nElems-1;out++){
@@ -51,12 +53,26 @@ class ArrayBub{
         }
     }
 
+    public void insertionSort(){
+        int in, out;
+        for(out=1;out<nElems;out++){
+            long temp = a[out];
+            in = out;
+            while(in>0 && a[in-1]>=temp){
+                a[in]=a[in-1];
+                --in;
+            }
+            a[in] = temp;
+        }
+    }
+
     private void swap(int one, int two){
         long temp = a[one];
         a[one]=a[two];
         a[two]=temp;
     }
 
+    //binary search
     public int find(long searchKey){
         int lowerBound = 0;
         int upperBound = nElems-1;
